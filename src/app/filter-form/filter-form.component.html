@@ -1,0 +1,105 @@
+<!-- 
+<div class="container">
+  <h1>Add new Filter</h1>
+  <form filterForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="model.filterName"
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        [(ngModel)]="model.subject"
+        name="subject"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="from">From</label>
+      <input
+        type="text"
+        class="form-control"
+        id="from"
+        [(ngModel)]="model.from"
+        name="from"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="has the words">Has the words</label>
+      <input
+        type="text"
+        class="form-control"
+        id="hasTheWords"
+        [(ngModel)]="model.hasTheWords"
+        name="hasTheWords"
+      />
+    </div>
+  </form>
+  <button (click)="submit()">Submit</button>
+</div>
+ -->
+
+<form>
+  <p>
+    <mat-form-field>
+      <mat-label>Filter name</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="filter.filterName"
+        name="filter.filterName"
+        required
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>From</mat-label>
+      <input
+        matInput
+        type="email"
+        [(ngModel)]="filter.from"
+        name="filter.from"
+      />
+      <mat-error *ngIf="formControl.hasError('email')"
+        >Email pattern requierd</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Subject</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="filter.subject"
+        name="filter.subject"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Words to filter</mat-label>
+      <textarea
+        matInput
+        type="text"
+        [(ngModel)]="filter.hasTheWords"
+        name="filter.hasTheWords"
+      ></textarea>
+    </mat-form-field>
+  </p>
+</form>
+<button mat-raised-button color="primary" (click)="submit()" cdkFocusInitial>
+  Save
+</button>

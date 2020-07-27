@@ -1,0 +1,31 @@
+<h2>My Filters</h2>
+
+<ul class="filters">
+  <mat-selection-list #shoes [multiple]="false">
+    <mat-list-option
+      *ngFor="let filter of filters"
+      [class.selected]="filter === selectedFilter"
+      (click)="onSelect(filter)"
+    >
+      {{ filter.filterName }}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <!-- <li
+    *ngFor="let filter of filters"
+    [class.selected]="filter === selectedFilter"
+    (click)="onSelect(filter)"
+  >
+    <span class="badge">{{ filter.filterId }}</span> {{ filter.filterName }}
+  </li> -->
+</ul>
+
+<app-filter-detail [filter]="selectedFilter"></app-filter-detail>
+<button
+  *ngIf="selectedFilter"
+  mat-raised-button
+  color="warn"
+  (click)="delete()"
+>
+  Delete
+</button>

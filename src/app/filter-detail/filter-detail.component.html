@@ -1,0 +1,34 @@
+<!-- <div *ngIf="filter">
+  <h2>{{ filter.filterName }} Details</h2>
+  <div>
+    <label
+      >Name:
+      <input type="text" [(ngModel)]="filter.filterName" placeholder="name" />
+    </label>
+  </div>
+  <div>
+    <label
+      >From:
+      <input type="email" [(ngModel)]="filter.from" placeholder="from" />
+    </label>
+  </div>
+  <div>
+    <label
+      >Subject:
+      <input type="text" [(ngModel)]="filter.subject" placeholder="subject" />
+    </label>
+  </div>
+  <div>
+    <label
+      >Has the words:
+      <input
+        type="text"
+        [(ngModel)]="filter.hasTheWords"
+        placeholder="has the words"
+      />
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+</div>
+ -->
+ <app-filter-form *ngIf="filter" [filter] = "filter" (filterEvent)="save($event)"></app-filter-form>

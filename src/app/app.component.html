@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+<div *ngIf="!isLogged; then requestLogin; else showFilters"></div>
+
+<ng-template #requestLogin>
+  <button mat-raised-button color="primary" (click)="login()">Login</button>
+</ng-template>
+
+<ng-template #showFilters>
+  <div>
+    <app-filters></app-filters>
+  </div>
+  <button mat-raised-button color="primary" (click)="openAddFilterDialog()">
+    Add new filter
+  </button>
+  <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+</ng-template>
