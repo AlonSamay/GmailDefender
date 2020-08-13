@@ -1,2 +1,1 @@
-# GmailDefender
-## Client Side
+# GmailDefender - Client
