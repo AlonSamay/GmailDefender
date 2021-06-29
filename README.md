@@ -7,7 +7,7 @@ External spam and unwanted messages filter system for Gmail mailbox, developed f
 - Java
 - Spring Boot
 - MongoDB
-- Gmail API
+- RESTFul API
 
 ### Front-end
 #### Angular 9.0:
